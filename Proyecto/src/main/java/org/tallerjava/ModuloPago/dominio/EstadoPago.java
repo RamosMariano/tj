@@ -1,4 +1,4 @@
 package org.tallerjava.ModuloPago.dominio;
 
-public class MedioPago {
+public enum EstadoPago {
 }

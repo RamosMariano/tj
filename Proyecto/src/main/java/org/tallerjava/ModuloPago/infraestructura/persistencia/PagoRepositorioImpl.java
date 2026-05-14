@@ -1,4 +1,4 @@
 package org.tallerjava.ModuloPago.infraestructura.persistencia;
 
-public class MedioPagoRepoMem {
+public class PagoRepositorioImpl {
 }

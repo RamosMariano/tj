@@ -1,4 +1,4 @@
 package org.tallerjava.ModuloCarga.infraestructura.persistencia;
 
-public class EstacionCargaRepoMem {
+public class CargadorRepositorioImpl {
 }

@@ -8,6 +8,91 @@ public class Carga {
     private LocalDate fecha;
     private LocalDateTime horaInicio, horaFin, horaEstimadaFin;  //horaEstimadaFin: solo si estado=activa
     private float importeTotal, recargoPorDemora;
+    private long idCLiente;
     private int porcentajeAvance;  //solo si estado=activa
     private EstadoCarga estado;
+
+    public Carga(LocalDate fecha, LocalDateTime horaInicio, LocalDateTime horaFin, LocalDateTime horaEstimadaFin, float importeTotal, float recargoPorDemora, long idCLiente, int porcentajeAvance, EstadoCarga estado) {
+        this.fecha = fecha;
+        this.horaInicio = horaInicio;
+        this.horaFin = horaFin;
+        this.horaEstimadaFin = horaEstimadaFin;
+        this.importeTotal = importeTotal;
+        this.recargoPorDemora = recargoPorDemora;
+        this.idCLiente = idCLiente;
+        this.porcentajeAvance = porcentajeAvance;
+        this.estado = estado;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public LocalDateTime getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(LocalDateTime horaInicio) {
+        this.horaInicio = horaInicio;
+    }
+
+    public LocalDateTime getHoraFin() {
+        return horaFin;
+    }
+
+    public void setHoraFin(LocalDateTime horaFin) {
+        this.horaFin = horaFin;
+    }
+
+    public LocalDateTime getHoraEstimadaFin() {
+        return horaEstimadaFin;
+    }
+
+    public void setHoraEstimadaFin(LocalDateTime horaEstimadaFin) {
+        this.horaEstimadaFin = horaEstimadaFin;
+    }
+
+    public float getImporteTotal() {
+        return importeTotal;
+    }
+
+    public void setImporteTotal(float importeTotal) {
+        this.importeTotal = importeTotal;
+    }
+
+    public float getRecargoPorDemora() {
+        return recargoPorDemora;
+    }
+
+    public void setRecargoPorDemora(float recargoPorDemora) {
+        this.recargoPorDemora = recargoPorDemora;
+    }
+
+    public long getIdCLiente() {
+        return idCLiente;
+    }
+
+    public void setIdCLiente(long idCLiente) {
+        this.idCLiente = idCLiente;
+    }
+
+    public int getPorcentajeAvance() {
+        return porcentajeAvance;
+    }
+
+    public void setPorcentajeAvance(int porcentajeAvance) {
+        this.porcentajeAvance = porcentajeAvance;
+    }
+
+    public EstadoCarga getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoCarga estado) {
+        this.estado = estado;
+    }
 }

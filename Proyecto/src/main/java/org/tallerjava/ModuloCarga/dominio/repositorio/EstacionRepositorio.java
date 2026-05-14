@@ -1,4 +1,4 @@
 package org.tallerjava.ModuloCarga.dominio.repositorio;
 
-public interface EstacionCargaRepoInterface {
+public class EstacionRepositorio {
 }
