@@ -1,4 +1,4 @@
 package org.tallerjava.ModuloCliente.dominio.repositorio;
 
-public interface ClienteRepoInterface {
+public interface ClienteRepocitorio {
 }

@@ -1,4 +1,4 @@
 package org.tallerjava.ModuloCliente.infraestructura.persistencia;
 
-public class ClienteRepoMem {
+public class ClienteRepositorioImpl {
 }
