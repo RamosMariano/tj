@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6cbcf4ee-834f-45a6-9eec-9381b5f47de5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/Interface/local/InterfaceLocalPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/Interface/local/InterfaceLocalPago.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/Interface/remota/rest/PagoAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/Interface/remota/rest/PagoAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/Interface/remota/rest/dto/PagoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/Interface/remota/rest/dto/PagoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/dominio/Pago.java" beforeDir="false" afterPath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/dominio/Pago.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/infraestructura/persistencia/PagoRepositorioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/infraestructura/persistencia/PagoRepositorioImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/aplicacion/ServicioPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/aplicacion/ServicioPago.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/aplicacion/impl/ServicioPagoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/java/org/tallerjava/ModuloPago/aplicacion/impl/ServicioPagoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/webapp/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TallerJavaEquipo6/src/main/webapp/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
