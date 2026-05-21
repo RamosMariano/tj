@@ -37,9 +37,9 @@ public class ServicioPagoImpl implements ServicioPago, InterfaceLocalPago
 
     public List<Pago> consultarPagos(String cedula, LocalDate fechaIni, LocalDate fechaFin){ return pagoRepositorio.listarPagosPorCedulaYFechas(cedula,fechaIni,fechaFin); }
 
-    public Response pagarCarga(String cedula, int importe, Long idMedioPago){
+    public boolean pagarCarga(String cedula, int importe, Long idMedioPago){
         Pago pago = new Pago(cedula,importe,idMedioPago);
         this.altaPago(cedula, pago);
-        return Response.ok().entity("Carga pagada correctamente").build();
+        return true;
     }
 }
