@@ -10,4 +10,5 @@ public interface ServicioPago {
     void altaPago(String cedula, Pago pago);
 
     List<Pago> consultarPagos(String cedula, LocalDate fechaIni, LocalDate fechaFin);
+    boolean pagarCarga(String cedulaCliente, long importeCentavos, long idMedioPago);
 }

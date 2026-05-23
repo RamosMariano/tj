@@ -14,6 +14,7 @@ import org.tallerjava.ModuloPago.dominio.repositorio.PagoRepositorio;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import org.jboss.logging.Logger;
 
 @ApplicationScoped
 @Transactional
@@ -24,6 +25,7 @@ public class ServicioPagoImpl implements ServicioPago
 
     @Inject
     ClienteRepositorio clienteRepositorio;
+    private static final Logger log = Logger.getLogger(ServicioPagoImpl.class);
 
     @Override
     public void altaPago(String cedula, Pago pago) {
@@ -31,6 +33,13 @@ public class ServicioPagoImpl implements ServicioPago
         Cliente c = clienteRepositorio.buscarPorCedula(cedula);
         c.agregarPago(pago);
         clienteRepositorio.actualizar(c);
+    }
+    @Override
+    public boolean pagarCarga(String cedulaCliente, long importeCentavos, long idMedioPago) {
+        // TODO: implementar logica de cobro — pendiente compañero
+        log.infof("pagarCarga invocado — cliente=%s, importe=%d centavos, medioPago=%d",
+                cedulaCliente, importeCentavos, idMedioPago);
+        return true;
     }
 
     public List<Pago> consultarPagos(String cedula, LocalDate fechaIni, LocalDate fechaFin){ return pagoRepositorio.listarPagosPorCedulaYFechas(cedula,fechaIni,fechaFin); }
