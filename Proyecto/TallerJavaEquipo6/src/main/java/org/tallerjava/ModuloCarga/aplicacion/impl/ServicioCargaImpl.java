@@ -127,7 +127,7 @@ public class ServicioCargaImpl implements ServicioCarga {
         repoCarga.save(carga);
         repoCargador.save(cargador);
 
-        long importeTotalCentavos = Math.round((importeEnergia + importeDemora) * 100);
+        int importeTotalCentavos = Math.round((importeEnergia + importeDemora) * 100);
 
         boolean pagoExitoso = interfaceLocalPago.pagarCarga(
                 carga.getIdCLiente(),

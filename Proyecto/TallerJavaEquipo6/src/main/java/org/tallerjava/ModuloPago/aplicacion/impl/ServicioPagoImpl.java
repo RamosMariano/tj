@@ -36,13 +36,6 @@ public class ServicioPagoImpl implements ServicioPago, InterfaceLocalPago
         c.agregarPago(pago);
         clienteRepositorio.actualizar(c);
     }
-    @Override
-    public boolean pagarCarga(String cedulaCliente, long importeCentavos, long idMedioPago) {
-        // TODO: implementar logica de cobro — pendiente compañero
-        log.infof("pagarCarga invocado — cliente=%s, importe=%d centavos, medioPago=%d",
-                cedulaCliente, importeCentavos, idMedioPago);
-        return true;
-    }
 
     public List<Pago> consultarPagos(String cedula, LocalDate fechaIni, LocalDate fechaFin){ return pagoRepositorio.listarPagosPorCedulaYFechas(cedula,fechaIni,fechaFin); }
 
