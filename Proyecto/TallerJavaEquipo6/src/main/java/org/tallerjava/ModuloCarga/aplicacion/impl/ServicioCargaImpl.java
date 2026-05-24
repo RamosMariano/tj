@@ -4,8 +4,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import org.jboss.logging.Logger;
-import org.tallerjava.ModuloCarga.Interface.evento.out.EventoCargaFinalizada;
-import org.tallerjava.ModuloCarga.Interface.evento.out.PublicadorEventoCarga;
 import org.tallerjava.ModuloCarga.aplicacion.ServicioCarga;
 import org.tallerjava.ModuloCarga.dominio.Carga;
 import org.tallerjava.ModuloCarga.dominio.Cargador;
@@ -16,7 +14,7 @@ import org.tallerjava.ModuloCarga.dominio.repositorio.CargaRepositorio;
 import org.tallerjava.ModuloCarga.dominio.repositorio.CargadorRepositorio;
 import org.tallerjava.ModuloCarga.dominio.repositorio.ClienteCargaRepositorio;
 import org.tallerjava.ModuloCarga.dominio.repositorio.EstacionRepositorio;
-
+import org.tallerjava.ModuloPago.Interface.local.InterfaceLocalPago;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -44,7 +42,7 @@ public class ServicioCargaImpl implements ServicioCarga {
     private ClienteCargaRepositorio repoCliente;
 
     @Inject
-    private PublicadorEventoCarga publicador;
+    InterfaceLocalPago interfaceLocalPago;
 
 
     @Override
@@ -129,16 +127,20 @@ public class ServicioCargaImpl implements ServicioCarga {
         repoCarga.save(carga);
         repoCargador.save(cargador);
 
-        long importeTotalCentavos = Math.round((importeEnergia + importeDemora) * 100);
-        EventoCargaFinalizada evento = new EventoCargaFinalizada(
-                carga.getIdCarga(),
-                carga.getIdCLiente(),
-                carga.getIdMedioPago(),
-                importeTotalCentavos
-        );
-        publicador.publicarCargaFinalizada(evento);
+        int importeTotalCentavos = Math.round((importeEnergia + importeDemora) * 100);
 
-        log.infof("Carga finalizada y evento publicado: idCarga=%d", carga.getIdCarga());
+        boolean pagoExitoso = interfaceLocalPago.pagarCarga(
+                carga.getIdCLiente(),
+                importeTotalCentavos,
+                carga.getIdMedioPago()
+        );
+
+        if (!pagoExitoso) {
+            throw new IllegalStateException(
+                    "El pago fallo para el cliente: " + carga.getIdCLiente());
+        }
+
+        log.infof("Carga finalizada y pago procesado: idCarga=%d", carga.getIdCarga());
     }
 
 
