@@ -144,12 +144,10 @@ public class ServicioCargaImpl implements ServicioCarga {
         if (!pagoExitoso) {
             log.warnf("Pago rechazado para cliente %s. Cliente bloqueado hasta saldar deuda.",
                     carga.getIdCLiente());
-            throw new IllegalStateException(
-                    "El pago fue rechazado. El cliente " + carga.getIdCLiente() +
-                            " quedó bloqueado hasta saldar la deuda pendiente.");
+        } else {
+            log.infof("Carga finalizada y pago procesado correctamente: idCarga=%d",
+                    carga.getIdCarga());
         }
-
-        log.infof("Carga finalizada y pago procesado correctamente: idCarga=%d", carga.getIdCarga());
     }
 
     @Override
